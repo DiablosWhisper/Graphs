@@ -1,0 +1,11 @@
+﻿  Source.cpp
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(43): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(70): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(89): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(96): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(128): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(205): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(226): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Graphs.vcxproj -> C:\Users\Gleb\source\repos\Graphs\Debug\Graphs.exe
