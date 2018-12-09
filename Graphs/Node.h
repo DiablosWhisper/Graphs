@@ -1,42 +1,39 @@
 #pragma once
+#include <cmath>
 
 class Node
 {
+private:
+
+	double coordinate_x;
+
+	double coordinate_y;
+
+	double polar_angle;
+
 public:
 
 	Node();
 
-	Node(const Node& Node);
+	Node(double x, double y);
 
-	Node(double CoordinateX, double CoordinateY);
+	Node(const Node&);
 
-	~Node() = default;
+	~Node();
 
-	double GetCoordinateX();
+	bool operator  <(const Node& b);
 
-	double GetCoordinateY();
+	Node& operator =(const Node&);
 
-	double GetPolarAngle();
+	bool operator ==(const Node&);
 
-	bool operator < (Node Node);
+	bool operator !=(const Node&);
 
-	Node& operator = (const Node& Node);
+	double get_X();
 
-	bool operator == (const Node& Node);
+	double get_Y();
 
-	bool BelongsToUpperSet(Node FirstNode, Node SecondNode, Node ThirdNode);
-
-	bool BelongsToLowerSet(Node FirstNode, Node SecondNode, Node ThirdNode);
+	double get_angle();
 
 	void FindPolarAngle(Node CenterOfMass);
-
-private:
-
-	double CoordinateX,
-
-		CoordinateY,
-
-		PolarAngle;
 };
-
-#include "Edge.h"

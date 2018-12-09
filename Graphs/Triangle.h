@@ -1,31 +1,19 @@
 #pragma once
 
-#include <vector>
-#include "Node.h"
+#include"Node.h"
+#include<vector>
 
 class Edge;
-
 class Triangle
 {
 public:
-
 	Triangle();
-
-	Triangle(Node FirstPeak, Node SecondPeak, Node ThirdPeak);
-
+	Triangle(Node x, Node y, Node z);
 	~Triangle();
-
-	Node GetUniqueNode(Edge Edge);
-
-	Node* Peaks;
-
-	bool operator == (const Triangle& Triangle);
-
-	void GetCenterOfCircle();
-
-private:
-
-	Node CenterOfCircle;
+	bool operator ==(const Triangle&);
+	Node get_unique_point(Edge & e);
+	Node get_center_of_circle();
+	std::vector<Node> vertex;
 };
 
-#include "Edge.h"
+#include"Edge.h"

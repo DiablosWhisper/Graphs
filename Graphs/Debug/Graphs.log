@@ -1,11 +1,46 @@
 ﻿  Source.cpp
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(43): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(70): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(77): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(89): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(96): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(128): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(205): warning C4018: '<': signed/unsigned mismatch
-c:\users\gleb\source\repos\graphs\graphs\source.cpp(226): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(92): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(93): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(342): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(422): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(439): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(442): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(456): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(458): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(479): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(524): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(528): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(541): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(575): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(579): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(589): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(591): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(620): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(650): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(652): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(666): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(679): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(692): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(704): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(714): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(747): warning C4326: return type of 'main' should be 'int' instead of 'void'
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(780): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(841): warning C4018: '<': signed/unsigned mismatch
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(847): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(857): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(859): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(120): warning C4018: '<': signed/unsigned mismatch
+  c:\users\gleb\source\repos\graphs\graphs\source.cpp(190): note: see reference to function template instantiation 'int find<_Ty>(T &,std::vector<_Ty,std::allocator<_Ty>>)' being compiled
+          with
+          [
+              _Ty=Triangle,
+              T=Triangle
+          ]
+c:\users\gleb\source\repos\graphs\graphs\source.cpp(106): warning C4018: '<': signed/unsigned mismatch
+  c:\users\gleb\source\repos\graphs\graphs\source.cpp(236): note: see reference to function template instantiation 'bool is_belong<Edge>(T &,std::vector<Edge,std::allocator<_Ty>>)' being compiled
+          with
+          [
+              T=Edge,
+              _Ty=Edge
+          ]
   Graphs.vcxproj -> C:\Users\Gleb\source\repos\Graphs\Debug\Graphs.exe

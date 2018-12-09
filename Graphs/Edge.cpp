@@ -1,57 +1,79 @@
-#include "Edge.h"
+#include"Edge.h"
 #include <cmath>
-
-using namespace std;
 
 Edge::Edge()
 {
-	Dots = new Node[2];
+}
+
+Edge::Edge(Node & start, Node &finish)
+{
+	this->start_point = start;
+
+	fin_point = finish;
 }
 
 Edge::~Edge()
 {
-	delete[] Dots;
+
+
 }
 
-Edge::Edge(Node FirstCoordinate, Node SecondCoordinate)
+Node& Edge::get_start_point()
 {
-	this->Dots[0] = FirstCoordinate;
-
-	this->Dots[1] = SecondCoordinate;
+	return start_point;
 }
 
-double Edge::GetLengthOfEdge()
+Node& Edge::get_finish_point()
 {
-	return sqrt(pow(Dots[1].GetCoordinateX() - Dots[0].GetCoordinateX(), 2) + pow(Dots[1].GetCoordinateY() - Dots[0].GetCoordinateY(), 2));
+	return fin_point;
 }
 
-Node Edge::GetTheBeginningOfTheEdge()
+void Edge::set_neighbord(Triangle & that)
 {
-	return Dots[0];
-}
-
-Node Edge::GetTheEndOfTheEdge()
-{
-	return Dots[1];
-}
-
-Edge Edge::operator= (const Edge& Edge)
-{
-	this->Dots[0] = Edge.Dots[0];
-
-	this->Dots[1] = Edge.Dots[1];
-
-	this->Neighbors.clear();
-
-	for (int Index = 0; Index < Edge.Neighbors.size(); Index++)
+	for (int i = 0; i < neigbords.size(); i++)
 	{
-		Neighbors.push_back(Edge.Neighbors[Index]);
+		if (neigbords[i] == that)
+		{
+			return;
+		}
+	}
+
+	neigbords.push_back(that);
+}
+
+void Edge::remove_neighbord(Triangle &that)
+{
+	for (int i = 0; i < neigbords.size(); i++)
+	{
+		if (neigbords[i] == that)
+		{
+			neigbords.erase(neigbords.begin() + i);
+		}
+	}
+}
+
+double Edge::length_of_edge()
+{
+	return (sqrt(pow((fin_point.get_X() - start_point.get_X()), 2) + pow((fin_point.get_Y() - start_point.get_Y()), 2)));
+}
+
+Edge Edge::operator=(const Edge &that)
+{
+	this->start_point = that.start_point;
+
+	this->fin_point = that.fin_point;
+
+	this->neigbords.clear();
+
+	for (int i = 0; i < that.neigbords.size(); i++)
+	{
+		neigbords.push_back(that.neigbords[i]);
 	}
 
 	return *this;
 }
 
-bool Edge::operator== (const Edge& Edge)
+bool Edge::operator==(const Edge &that)
 {
-	return (this->Dots[0] == Edge.Dots[0] && this->Dots[1] == Edge.Dots[1]);
+	return ((this->start_point == that.start_point && this->fin_point == that.fin_point) || (this->start_point == that.fin_point && this->fin_point == that.start_point));
 }

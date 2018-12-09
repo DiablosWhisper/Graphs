@@ -1,35 +1,42 @@
 #pragma once
+#include"Node.h"
+#include<vector>
 
-#include "Node.h"
-#include <vector>
+class Node;
+
 class Triangle;
 
 class Edge
 {
 public:
-
 	Edge();
 
-	Edge(Node FirstCoordinate, Node SecondCoordinate);
+	Edge(Node&, Node&);
 
 	~Edge();
 
-	double GetLengthOfEdge();
+	Node& get_start_point();
 
-	Node GetTheBeginningOfTheEdge();
+	Node& get_finish_point();
 
-	Node GetTheEndOfTheEdge();
+	void set_neighbord(Triangle &);
 
-	Edge operator = (const Edge& Edge);
+	void remove_neighbord(Triangle &);
 
-	bool operator == (const Edge& Edge);
+	double length_of_edge();
 
-	std::vector<Triangle> Neighbors;
+	Edge operator = (const Edge&);
+
+	bool operator == (const Edge&);
+
+	std::vector<Triangle> neigbords;
 
 private:
 
-	Node * Dots;
+	Node start_point;
+
+	Node fin_point;
+
 };
 
-#include "Triangle.h"
-
+#include"Triangle.h"

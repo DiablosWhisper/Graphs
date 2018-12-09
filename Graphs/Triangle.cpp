@@ -2,76 +2,70 @@
 
 Triangle::Triangle()
 {
-	Peaks = new Node[3];
+
 }
 
-Triangle::Triangle(Node FirstPeak, Node SecondPeak, Node ThirdPeak)
+Triangle::Triangle(Node x, Node y, Node z)
 {
-	this->Peaks[0] = FirstPeak;
+	vertex.push_back(x);
 
-	this->Peaks[1] = SecondPeak;
+	vertex.push_back(y);
 
-	this->Peaks[2] = ThirdPeak;
+	vertex.push_back(z);
 }
 
 Triangle::~Triangle()
 {
-	delete[] Peaks;
 }
 
-Node Triangle::GetUniqueNode(Edge Edge)
+bool Triangle::operator==(const Triangle &that)
 {
-	for (int Index = 0; Index < 3; Index++)
-	{
-		if (Peaks[Index] == Edge.GetTheBeginningOfTheEdge() || Peaks[Index] == Edge.GetTheEndOfTheEdge())
-		{
-			Index++;
-		}
-		else
-		{
-			return Peaks[Index];
-		}
-	}
-}
+	bool flag;
 
-bool Triangle::operator==(const Triangle& Triangle)
-{
-	int TemporaryIndex = 0;
-
-	for (int Index = 0; Index < 3; Index++)
+	for (int i = 0; i < 3; i++)
 	{
-		if (this->Peaks[TemporaryIndex] == Triangle.Peaks[Index])
+		flag = false;
+
+		for (int j = 0; j < 3; j++)
 		{
-			TemporaryIndex++;
+			if (this->vertex[i] == that.vertex[j])
+			{
+				flag = true;
+			}
 		}
-		else
+		if (!flag)
 		{
 			return false;
 		}
 	}
 
-	return TemporaryIndex == 3;
+	return true;
 }
 
-void Triangle::GetCenterOfCircle()
+Node Triangle::get_unique_point(Edge& e)
 {
-	double Divisioner = 2*(this->Peaks[0].GetCoordinateX()*(this->Peaks[1].GetCoordinateY() - this->Peaks[2].GetCoordinateY()
+	for (int i = 0; i < 3; i++)
+	{
+		if (vertex[i] == e.get_start_point() || vertex[i] == e.get_finish_point())
+		{
+			i++;
+		}
+		else
+		{
+			return vertex[i];
+		}
+	}
+}
 
-		+ Peaks[1].GetCoordinateX()*(this->Peaks[2].GetCoordinateY() - this->Peaks[0].GetCoordinateY()) 
+Node Triangle::get_center_of_circle()
+{
+	double d = 2 * (vertex[0].get_X() * (vertex[1].get_Y() - vertex[2].get_Y()) + vertex[1].get_X() * (vertex[2].get_Y() - vertex[0].get_Y()) + vertex[2].get_X()*(vertex[0].get_Y() - vertex[1].get_Y()));
 
-		+ Peaks[2].GetCoordinateX()*(this->Peaks[0].GetCoordinateY() - this->Peaks[1].GetCoordinateY())));
+	double x = ((vertex[0].get_X() * vertex[0].get_X() + vertex[0].get_Y() * vertex[0].get_Y())*(vertex[1].get_Y() - vertex[2].get_Y()) + (vertex[1].get_X() * vertex[1].get_X() + vertex[1].get_Y() * vertex[1].get_Y())*(vertex[2].get_Y() - vertex[0].get_Y()) + (vertex[2].get_X() * vertex[2].get_X() + vertex[2].get_Y() * vertex[2].get_Y()) * (vertex[0].get_Y() - vertex[1].get_Y())) / d;
 
-	double CoordinateX = ((this->Peaks[0].GetCoordinateX() * this->Peaks[0].GetCoordinateX() + this->Peaks[0].GetCoordinateY() * this->Peaks[0].GetCoordinateY()) * (this->Peaks[1].GetCoordinateY() - this->Peaks[2].GetCoordinateY()) 
-		
-		+ (this->Peaks[1].GetCoordinateX() * this->Peaks[1].GetCoordinateX() + this->Peaks[1].GetCoordinateY() * this->Peaks[1].GetCoordinateY()) * (this->Peaks[2].GetCoordinateY() - this->Peaks[0].GetCoordinateY())
-		
-		+ (this->Peaks[2].GetCoordinateX() * this->Peaks[2].GetCoordinateX() + this->Peaks[2].GetCoordinateY() * this->Peaks[2].GetCoordinateY()) * (this->Peaks[0].GetCoordinateY() - this->Peaks[1].GetCoordinateY())) /Divisioner;
+	double y = ((vertex[0].get_X() * vertex[0].get_X() + vertex[0].get_Y() * vertex[0].get_Y())*(vertex[2].get_X() - vertex[1].get_X()) + (vertex[1].get_X() * vertex[1].get_X() + vertex[1].get_Y() * vertex[1].get_Y())*(vertex[0].get_X() - vertex[2].get_X()) + (vertex[2].get_X() * vertex[2].get_X() + vertex[2].get_Y() * vertex[2].get_Y()) * (vertex[1].get_X() - vertex[0].get_X())) / d;
 
-	double CoordinateY = ((this->Peaks[0].GetCoordinateX() * this->Peaks[0].GetCoordinateX() + this->Peaks[0].GetCoordinateY() * this->Peaks[0].GetCoordinateY()) * (this->Peaks[2].GetCoordinateX() - this->Peaks[1].GetCoordinateX())
+	Node temp(x, y);
 
-		+ (this->Peaks[1].GetCoordinateX() * this->Peaks[1].GetCoordinateX() + this->Peaks[1].GetCoordinateY() * this->Peaks[1].GetCoordinateY()) * (this->Peaks[0].GetCoordinateX() - this->Peaks[2].GetCoordinateX())
-
-		+ (this->Peaks[2].GetCoordinateX() * this->Peaks[2].GetCoordinateX() + this->Peaks[2].GetCoordinateY() * this->Peaks[2].GetCoordinateY()) * (this->Peaks[1].GetCoordinateX() - this->Peaks[0].GetCoordinateX())) / Divisioner;
-
-	CenterOfCircle = Node(CoordinateX,CoordinateY);
+	return temp;
 }
